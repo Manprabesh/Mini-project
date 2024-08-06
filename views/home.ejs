@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Feed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+        .post {
+            border: 1px solid #e5e7eb;
+            padding: 1em;
+            margin-bottom: 1em;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="bg-zinc-900 text-white ">
+
+        <nav class="navbar text-white text-2xl  bg-zinc-400 h-20 ml-20 w-3/4 fixed top-0 rounded-full">
+            <ul class="flex justify-between content-center items-center  items-center h-16 mx-10 ">
+                <li><a class="bg-green-500 p-4" href="/home">Home</a></li>
+                <li><a href="/profile">profile</a></li>
+                <li><a href="/write">write</a></li>
+            </ul>
+         </nav>
+
+
+    <!-- <h1 class="text-3xl my-3 text-violet-500 mx-20">Home Feed</h1> -->
+
+
+    <div id="postsContainer" class="mx-72 my-20 mt-32">
+        <% posts.forEach(post => { %>
+            <div class="post">
+                <h2 class="text-xl font-bold"><%= post.heading %></h2>
+                <!-- <p><%= post.content %></p> -->
+                 <div class="features flex justify-between item-end">
+
+                     <a class="text-amber-400" href="/read/<%= post._id %>">Read More</a>
+                     <small><span class="text-purple-600">author</span> <%= post.user.username %></small>
+                 </div>
+
+            </div>
+        <% }); %>
+    </div>
+    <div class="flex flex-wrap justify-center">
+        <% img.forEach(function(photo) { %>
+
+                <div class="bg-red-500 h-56 w-56 overflow-hidden flex items-center rounded-md shadow-2xl m-4">
+                    <img class="fle" src="/images/uploads/<%= photo.photos %>" alt="">
+                </div>
+
+        <% }) %>
+    </div>
+
+    <script>
+        // const socket = io();
+
+        // socket.on('new_post', function(data) {
+        //     const postsContainer = document.getElementById('postsContainer');
+        //     const newPost = document.createElement('div');
+        //     newPost.className = 'post';
+        //     newPost.innerHTML = `<h2 class="text-xl font-bold">${data.post.heading}</h2>
+        //         <p>${data.post.content}</p>
+        //         <small>Posted by ${data.user}</small>`;
+        //     postsContainer.prepend(newPost); // Prepend to show new posts at the top
+        // });
+    </script>
+</body>
+</html>

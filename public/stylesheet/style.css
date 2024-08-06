@@ -1,0 +1,56 @@
+.textarea-container {
+    position: relative;
+}
+
+.textarea-heading {
+    position: absolute;
+    top: -10px;
+    /* Adjust based on your preference */
+    left: 10px;
+    font-weight: bold;
+    background-color: #1A202C;
+    /* bg-zinc-900 background color to match the textarea background */
+    padding: 0 5px;
+}
+
+textarea {
+    padding-top: 3em;
+    /* Increase this to give more space for the heading */
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+::placeholder {
+    margin-top: 20px;
+    /* Adjust to prevent collision with the heading */
+}
+
+.profile {
+    position: relative;
+}
+
+
+#profile {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    /* position: absol; */
+}
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 6 / 3;
+}
+
+.div2 {
+    grid-area: 1 / 3 / 6 / 5;
+}

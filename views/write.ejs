@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="/stylesheet/write.css">
+</head>
+<body class="bg-black  text-white">
+
+    <form action="/post" method="post" class="form-container bg-black p-6 rounded-lg shadow-lg">
+        <div class="textarea-container mb-4">
+            <label for="title" class="block text-lg font-semibold mb-2 ">Blog Title</label>
+            <input type="text" id="title" class="textarea-heading w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-black" placeholder="Enter the title" name="title" required>
+        </div>
+        <div class="textarea-container mb-4">
+            <label for="content" class="block text-lg font-semibold mb-2">Blog Content</label>
+            <textarea id="content" class="bg-transparent border border-gray-300 rounded resize-none w-full h-40 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your thoughts..." name="content" required></textarea>
+        </div>
+        <input type="submit" class="bg-blue-500 text-white p-2 w-full rounded-lg mt-3 cursor-pointer hover:bg-blue-600 transition duration-200" value="Create">
+    </form>
+</body>
+</html>
